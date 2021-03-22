@@ -1,9 +1,9 @@
 <h2>New Post</h2>
  
-<%= form_with model: @user do |form| %> 
-    <%= label_tag(:title, "Title:") %><br> 
-    <%= form.text_field :title %><br><br> 
-    <%= label_tag(:content, "Content:") %><br> 
-    <%= form.text_area :content %><br><br> 
-    <%= form.submit :Submit %> 
+<%= simple_form_for(@post) do |f| %>
+    <h1>title</h1>
+    <%= f.input :title %>
+    <h2>content</h2>
+    <%= f.input :content %>
+    <%= f.button :submit %>
 <% end %> 
