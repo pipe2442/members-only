@@ -34,6 +34,9 @@ gem 'devise'
 # Simple Form aims to be as flexible as possible while helping you with powerful components to create your forms
 gem 'simple_form'
 
+# A modern CSS framework based on Flexbox.
+gem "bulma-rails", "~> 0.9.1"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

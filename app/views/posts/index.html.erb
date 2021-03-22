@@ -1,6 +1,11 @@
 <h1>Im the index</h1>
-
-<%= @posts.each do |post|%>
-    <%= post.title %>
-    <%= post.content %>
-<% end %>
+<h2> <%= link_to "Create new post", "/posts/new" %> </h2>
+    <section class="flex">
+        <div class="flex">
+            <% @posts.each do |post|%>
+            <%= post.title %>
+            <%= post.content %>
+            <%= post.user.email %>
+            <% end %>
+        </div>
+    </section>
