@@ -1,0 +1,29 @@
+<div class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title">New Post</h1>
+        </div>
+        <div class="content">
+            <h3 class="button"> <%= link_to "Home", root_path %> </h3>
+        </div>
+    </div>
+</div>
+ 
+<div class="section">
+    <%= simple_form_for(@post) do |f| %>
+        <div class="column is-centered">
+            <div class="field">
+                <div class="control">
+                    <%= f.input :title, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }  %>
+                </div>
+            </div>
+            <%= f.button :submit, 'Create new post', class: "button is-primary" %>    
+        </div>
+    <% end %>
+</div>

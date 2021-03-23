@@ -1,0 +1,40 @@
+
+<div class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title">Members Only</h1>
+        </div>
+        <div class="content">
+            <h3 class="button"> <%= link_to "Create new post", "/posts/new" %> </h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="section">
+	<div class="container">
+		<% @posts.each do |post| %>
+			<div class="card">
+		  <div class="card-content">
+		    <div class="media">
+		      <div class="media-content">
+		        <p class="title is-4"><%= post.title %></p>
+		      </div>
+		    </div>
+		    <div class="content">
+		     	<%= post.content %>
+		    </div>
+		    <div class="content">
+            <% if user_signed_in? %>
+		    	<span class="tag is-rounded">Authors name: <%= post.user.name %></span>
+            <% else %>
+                <span class="tag is-rounded">You need to create an account in order to know the authors name.</span>
+            <% end %>
+		    </div>
+		  </div>
+		</div>
+		<% end %>
+	</div>
+</div>
