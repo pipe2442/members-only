@@ -1,11 +1,36 @@
-<h1>Im the index</h1>
-<h2> <%= link_to "Create new post", "/posts/new" %> </h2>
-    <section class="flex">
-        <div class="flex">
-            <% @posts.each do |post|%>
-            <%= post.title %>
-            <%= post.content %>
-            <%= post.user.email %>
-            <% end %>
+
+<div class="section">
+    <div class="container">
+        <div class="content">
+            <h1 class="title">Members Only</h1>
         </div>
-    </section>
+        <div class="content">
+            <h3 class="button"> <%= link_to "Create new post", "/posts/new" %> </h3>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="section">
+	<div class="container">
+		<% @posts.each do |post| %>
+			<div class="card">
+		  <div class="card-content">
+		    <div class="media">
+		      <div class="media-content">
+		        <p class="title is-4"><%= post.title %></p>
+		      </div>
+		    </div>
+		    <div class="content">
+		     	<%= post.content %>
+		    </div>
+		    <div class="content">
+		    	<span class="tag is-rounded"><%= post.user.email %> Email author:</span>
+		    </div>
+		  </div>
+		</div>
+		<% end %>
+	</div>
+</div>
