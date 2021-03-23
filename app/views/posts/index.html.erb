@@ -28,7 +28,7 @@
 		    </div>
 		    <div class="content">
             <% if user_signed_in? %>
-		    	<span class="tag is-rounded">Authors email: <%= post.user.email %></span>
+		    	<span class="tag is-rounded">Authors name: <%= post.user.name %></span>
             <% else %>
                 <span class="tag is-rounded">You need to create an account in order to know the authors name</span>
             <% end %>
