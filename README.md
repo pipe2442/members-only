@@ -42,11 +42,15 @@ Run `rails db:migrate` and make sure the commande succeded
 
 #### Main pages
 
-![screenshot](screenshots/one.png)
+- ![screenshot](screenshots/one.png)
 
-![screenshot](screenshots/two.png)
+- ![screenshot](screenshots/two.png)
 
-![screenshot](screenshots/three.png)
+> In case you are not signed in yet
+
+- ![screenshot](screenshots/tree.png)
+
+- ![screenshot](screenshots/four.png)
 
 ## 🤝 Contributing
 
