@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :require_login, except: %i[index show]
+
 
   def index
     @posts = Post.all.order('created_at DESC')
@@ -25,5 +26,12 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+
+  def require_login
+    unless user_signed_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to new_user_session_path 
+    end
   end
 end
