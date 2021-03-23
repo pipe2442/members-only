@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_login, except: %i[index show]
 
-
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -30,8 +29,8 @@ class PostsController < ApplicationController
 
   def require_login
     unless user_signed_in?
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to new_user_session_path 
+      flash[:error] = 'You must be logged in to access this section'
+      redirect_to new_user_session_path
     end
   end
 end
